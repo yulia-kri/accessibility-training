@@ -213,6 +213,11 @@ input:focus {
   color: #0c588b;
 }
 
+.checkbox__input:focus,
+.radio__input:focus {
+  outline: 2px solid !important;
+}
+
 .visually-hidden {
   position: absolute;
   clip: rect(0 0 0 0);
@@ -233,4 +238,47 @@ input:focus {
   display: flex;
   justify-content: center;
   padding: 20px;
+}
+
+.dropMenu {
+  position: relative;
+}
+
+.skip-to-link {
+  position: absolute;
+  left: 20px;
+  display: block;
+  padding: 5px 10px;
+  font-size: 16px;
+  color: #000;
+  background: #fff;
+  border-radius: 6px;
+  z-index: 999;
+}
+
+.dropMenu-menu {
+  position: absolute;
+  top: 34px;
+  left: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #fff;
+  border-radius: 6px;
+  z-index: 999;
+  visibility: hidden;
+}
+
+.dropMenu-menu.open {
+  visibility: visible;
+}
+
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: top;
+  border-top: 4px solid #000;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  content: '';
 }
