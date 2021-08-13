@@ -52,3 +52,7 @@ menuEl.addEventListener('click', (e) => {
     menuEl.classList.remove('open');
   }
 });
+
+document.querySelector('.navbar-brand > a').addEventListener('focus', () => {
+  menuEl.classList.remove('open');
+});
