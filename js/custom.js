@@ -56,3 +56,16 @@ menuEl.addEventListener('click', (e) => {
 document.querySelector('.navbar-brand > a').addEventListener('focus', () => {
   menuEl.classList.remove('open');
 });
+
+function displayRandomImage() {
+  const container = document.querySelector('.image-container');
+
+  fetch(`https://source.unsplash.com/1600x900/?people`).then((response) => {
+    container.innerHTML = `
+      <img src="${response.url}" alt=""/>
+      <p>Image was changed!</p>
+    `;
+  });
+}
+
+setInterval(displayRandomImage, 60000);
