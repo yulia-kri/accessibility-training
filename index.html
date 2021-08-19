@@ -33,7 +33,7 @@
             <a href="https://www.epam.com/" target="_blank" title="opens in a new window tab" class="navbar-item logo-link">
               <img src="https://www.epam.com/content/dam/epam/global/logo_white-blue.svg"  alt="Epam logo">
             </a>
-            <span class="navbar-burger burger" data-target="navbarMenu" aria-controls="navbarMenu">
+            <span class="navbar-burger burger" data-target="navbarMenu" aria-controls="navbarMenu" aria-haspopup="true">
               <span></span>
               <span></span>
               <span></span>
@@ -311,7 +311,7 @@
                 <div class="content">
                   <div>Click on image above</div>
                   <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec. Integer enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac ut consequat semper viverra nam.</p>
-                  <button class="button is-link modal-button" data-target="modal-image1" aria-controls="modal-image1">Image modal</button>
+                  <button class="button is-link modal-button" data-target="modal-image1" aria-controls="modal-image1" aria-haspopup="true">Image modal</button>
                 </div>
               </div>
             </div>
@@ -328,7 +328,7 @@
                   <div>Tempor orci dapibus ultrices in.</div>
                   <p>Ut venenatis tellus in metus vulputate. Amet consectetur adipiscing elit pellentesque. Sed arcu non odio euismod lacinia at quis risus. Faucibus turpis in eu mi bibendum neque egestas cmonsu songue. Phasellus vestibulum lorem
                     sed risus.</p>
-                  <button class="button is-link modal-button" data-target="modal-card" aria-controls="modal-card">Modal Card</button>
+                  <button class="button is-link modal-button" data-target="modal-card" aria-controls="modal-card" aria-haspopup="true">Modal Card</button>
                 </div>
               </div>
             </div>
@@ -344,7 +344,7 @@
                 <div class="content">
                   <div>Click anywhere on card</div>
                   <p>Imperdiet dui accumsan sit amet nulla facilisi morbi. Fusce ut placerat orci nulla pellentesque dignissim enim. Libero id faucibus nisl tincidunt eget nullam. Commodo viverra maecenas accumsan lacus vel facilisis.</p>
-                  <button class="button is-link modal-button" data-target="modal-image2" aria-controls="modal-image2">Image modal</button>
+                  <button class="button is-link modal-button" data-target="modal-image2" aria-controls="modal-image2" aria-haspopup="true">Image modal</button>
                 </div>
               </div>
             </div>
@@ -887,14 +887,14 @@
         <div class="field">
           <label class="label" for="name">Name</label>
           <div class="control">
-            <input id="name" class="input" type="text" placeholder="Text input" autocomplete="name">
+            <input id="name" class="input" type="text" placeholder="Name" autocomplete="name">
           </div>
         </div>
 
         <div class="field">
           <label class="label" for="username">Username</label>
           <div class="control has-icons-left has-icons-right">
-            <input id="username" class="input is-success" type="text" autocorrect="off">
+            <input id="username" class="input is-success" type="text" placeholder="Username" autocorrect="off">
             <span class="icon is-small is-left" aria-hidden="true">
               <i class="fas fa-user"></i>
             </span>
@@ -908,7 +908,7 @@
         <div class="field">
           <label class="label" for="email">Email</label>
           <div class="control has-icons-left has-icons-right">
-            <input id="email" class="input is-danger" type="email" placeholder="Email input" value="hello@" required aria-required="true" autocomplete="email" autocapitalize="off" autocorrect="off" spellcheck="false">
+            <input id="email" class="input is-danger" type="email" placeholder="Email" value="hello@" required aria-required="true" autocomplete="email" autocapitalize="off" autocorrect="off" spellcheck="false">
             <span class="icon is-small is-left" aria-hidden="true">
               <i class="fas fa-envelope"></i>
             </span>
@@ -934,7 +934,7 @@
         <div class="field">
           <label class="label" for="message">Message</label>
           <div class="control">
-            <textarea id="message" class="textarea" placeholder="Textarea" required aria-required="true"></textarea>
+            <textarea id="message" class="textarea" placeholder="Your questions..." required aria-required="true"></textarea>
           </div>
         </div>
 
@@ -974,7 +974,7 @@
     </div>
   </section>
 
-  <section class="hero is-info">
+  <div class="hero is-info">
     <nav aria-label="Breadcrumb">
       <ol class="breadcrumb">
         <li><a href="#main">About</a></li>
@@ -982,13 +982,13 @@
         <li><a href="#services">Services</a></li>
       </ol>
     </nav>
-  </section>
+  </div>
 
-  <section id="live-content">
+  <div id="live-content">
     <div class="image-container" role="status" tabindex="0">
       <img src="https://source.unsplash.com/1600x900/?people" alt=""/>
     </div>
-  </section>
+  </div>
 </main>
 
   <footer class="footer">
