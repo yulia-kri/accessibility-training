@@ -287,3 +287,47 @@ input:focus {
   display: flex;
   column-gap: 10px;
 }
+
+fieldset {
+  border: 0;
+}
+
+.sr-only {
+  position: absolute;
+  margin: -1px 0 0 -1px;
+  padding: 0;
+  display: block;
+  width: 1px;
+  height: 1px;
+  font-size: 1px;
+  line-height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  outline: 0;
+}
+
+.title,
+.subtitle {
+  line-height: 1.5;
+}
+
+a.underline,
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+#live-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.image-container {
+  width: 45%;
+}
