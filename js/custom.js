@@ -135,32 +135,60 @@ function displayRandomImage() {
 
 setInterval(displayRandomImage, 60000);
 
-const toggleExpandedMenuElem = document.getElementById('expanded-menu-item');
-const expandedMenuElem = document.querySelector('#expanded-menu-item > ul');
-const expandedMenuItemsElems = document.querySelectorAll(
-  '#expanded-menu-item [role="menuitem"]'
+const toggleExpandedMenu = document.getElementById('toggle-expanded-menu');
+const expandedMenu = document.getElementById('expanded-menu');
+const expandedMenuItems = document.querySelectorAll(
+  '#expanded-menu [role="menuitem"]'
+);
+const expanded = () =>
+  toggleExpandedMenu.getAttribute('aria-expanded') === 'true';
+
+toggleExpandedMenu.addEventListener('click', toggleMenu);
+
+toggleExpandedMenu.addEventListener('keydown', (e) => {
+  if (e.code === 'Space' || e.code === 'Enter') {
+    e.preventDefault();
+    openMenu();
+  }
+  if (e.code === 'Tab' && expanded()) {
+    closeMenu();
+  }
+});
+
+expandedMenuItems.forEach((item) =>
+  item.addEventListener('keydown', handleMenuItemKeyDown)
 );
 
-toggleExpandedMenuElem.addEventListener('click', toggleMenu);
+function toggleMenu() {
+  if (expanded()) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+}
 
-toggleExpandedMenuElem.addEventListener('keydown', (e) => {
+function openMenu() {
+  toggleExpandedMenu.setAttribute('aria-expanded', 'true');
+  expandedMenu.style.display = 'flex';
+  expandedMenuItems[0].focus();
+}
+
+function closeMenu() {
+  toggleExpandedMenu.setAttribute('aria-expanded', 'false');
+  expandedMenu.style.display = 'none';
+}
+
+function handleMenuItemKeyDown(e) {
   const { code } = e;
-
-  const expanded =
-    toggleExpandedMenuElem.getAttribute('aria-expanded') === 'true';
 
   switch (code) {
     case 'Space':
     case 'Enter':
       e.preventDefault();
-      if (!expanded) {
-        openMenu();
-      } else {
-        alert(document.activeElement.textContent);
-        closeMenu();
-      }
+      closeMenu();
       break;
     case 'Escape':
+    case 'Tab':
       e.preventDefault();
       closeMenu();
       break;
@@ -175,77 +203,58 @@ toggleExpandedMenuElem.addEventListener('keydown', (e) => {
       document.querySelector('#navbarMenu > ul > li:nth-child(1) > a').focus();
       break;
     case 'ArrowDown':
-      if (expanded) {
+      if (expanded()) {
         e.preventDefault();
 
         const current = document.activeElement;
         const index = +current?.dataset?.index;
-        const { length } = expandedMenuItemsElems;
+        const { length } = expandedMenuItems;
 
         current.blur();
 
         const target =
           index + 1 < length
-            ? expandedMenuItemsElems[index + 1]
-            : expandedMenuItemsElems[0];
+            ? expandedMenuItems[index + 1]
+            : expandedMenuItems[0];
         target.focus();
       }
       break;
     case 'ArrowUp':
-      if (expanded) {
+      if (expanded()) {
         e.preventDefault();
 
         const current = document.activeElement;
         const index = +current?.dataset?.index;
-        const { length } = expandedMenuItemsElems;
+        const { length } = expandedMenuItems;
 
         current.blur();
 
         const target =
           index - 1 >= 0
-            ? expandedMenuItemsElems[index - 1]
-            : expandedMenuItemsElems[length - 1];
+            ? expandedMenuItems[index - 1]
+            : expandedMenuItems[length - 1];
         target.focus();
       }
       break;
     case 'Home':
-      if (expanded) {
+      if (expanded()) {
         e.preventDefault();
 
         const current = document.activeElement;
         current.blur();
 
-        expandedMenuItemsElems[0].focus();
+        expandedMenuItems[0].focus();
       }
       break;
     case 'End':
-      if (expanded) {
+      if (expanded()) {
         e.preventDefault();
 
         const current = document.activeElement;
         current.blur();
 
-        expandedMenuItemsElems[expandedMenuItemsElems.length - 1].focus();
+        expandedMenuItems[expandedMenuItems.length - 1].focus();
       }
       break;
   }
-});
-
-function toggleMenu() {
-  if (toggleExpandedMenuElem.getAttribute('aria-expanded') === 'true') {
-    closeMenu();
-  } else {
-    openMenu();
-  }
-}
-
-function openMenu() {
-  toggleExpandedMenuElem.setAttribute('aria-expanded', 'true');
-  expandedMenuElem.style.display = 'block';
-  expandedMenuItemsElems[0].focus();
-}
-
-function closeMenu() {
-  toggleExpandedMenuElem.setAttribute('aria-expanded', 'false');
-  expandedMenuElem.style.display = 'none';
 }

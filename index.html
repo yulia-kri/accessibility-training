@@ -51,7 +51,7 @@
                 </a>
               </li>
               <li class="navbar-item" role="none">
-                <a class="button is-white is-outlined" id="expanded-menu-item" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">
+                <a class="button is-white is-outlined" id="toggle-expanded-menu" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="expanded-menu" tabindex="0">
                   <span class="icon" aria-hidden="true">
                     <i class="fab fa-superpowers"></i>
                   </span>
@@ -59,16 +59,16 @@
                   <span class="icon" aria-hidden="true">
                     <i class="fas fa-caret-down"></i>
                   </span>
-
-                  <ul class="expanded-menu" role="menu" aria-label="Examples" tabindex="-1">
-                    <li data-index="0" role="menuitem" tabindex="-1">Administration</li>
-                    <li data-index="1" role="menuitem" tabindex="-1">Team Settings</li>
-                    <li data-index="2" role="menuitem" tabindex="-1">Manage Your Team</li>
-                    <li data-index="3" role="menuitem" tabindex="-1">Invitations</li>
-                    <li role="separator"></li>
-                    <li data-index="4" role="menuitem" tabindex="-1">Authentication</li>
-                  </ul>
                 </a>
+
+                  <div id="expanded-menu" class="expanded-menu" role="menu" aria-label="Examples" tabindex="-1">
+                    <a href="#" data-index="0" role="menuitem" tabindex="-1">Administration</a>
+                    <a href="#" data-index="1" role="menuitem" tabindex="-1">Team Settings</a>
+                    <a href="#" data-index="2" role="menuitem" tabindex="-1">Manage Your Team</a>
+                    <a href="#" data-index="3" role="menuitem" tabindex="-1">Invitations</a>
+                    <span role="separator"></span>
+                    <a href="#" data-index="4" role="menuitem" tabindex="-1">Authentication</a>
+                  </div>
               </li>
               <li class="navbar-item" role="none">
                 <a href="#" class="button is-white is-outlined">

@@ -375,6 +375,7 @@ a:focus {
 
 [role='separator'] {
   position: absolute;
+  bottom: 40px;
   left: 0;
   right: 0;
   height: 1px;
@@ -385,20 +386,25 @@ a:focus {
   display: none;
   z-index: 0;
   position: absolute;
-  top: 40px;
-  left: 0px;
-  width: 160px;
-  text-align: left;
+  top: 55px;
+  left: 12px;
+  flex-direction: column;
+  row-gap: 10px;
+  padding: 10px 0;
   border: 1px solid #fff;
   border-radius: 4px;
 }
 
-.expanded-menu li {
-  padding-left: 10px;
-  line-height: 2;
+.expanded-menu a {
+  padding: 0 15px;
+  color: #fff;
 }
 
-.expanded-menu li:focus,
-.expanded-menu li:hover {
+#expanded-menu > a:last-of-type {
+  margin-top: 10px;
+}
+
+.expanded-menu a:focus,
+.expanded-menu a:hover {
   background-color: #e91741;
 }
