@@ -137,9 +137,7 @@ setInterval(displayRandomImage, 60000);
 
 const toggleExpandedMenu = document.getElementById('toggle-expanded-menu');
 const expandedMenu = document.getElementById('expanded-menu');
-const expandedMenuItems = document.querySelectorAll(
-  '#expanded-menu [role="menuitem"]'
-);
+const expandedMenuItems = document.querySelectorAll('#expanded-menu a');
 const expanded = () =>
   toggleExpandedMenu.getAttribute('aria-expanded') === 'true';
 
