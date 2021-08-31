@@ -331,3 +331,80 @@ a:focus {
 .image-container {
   width: 45%;
 }
+
+[role='tablist'] {
+  display: flex;
+  justify-content: center;
+}
+
+[role='tab'][aria-selected='true'] {
+  border-radius: 0;
+  color: #0c588b;
+  background: #fff;
+  outline: 0;
+}
+
+[role='tab'] {
+  position: relative;
+  margin: 0;
+  padding: 0.3em 1.5em 0.4em;
+  border: 0;
+  border-radius: 0.5em 0.5em 0 0;
+  overflow: visible;
+  font-family: inherit;
+  font-size: inherit;
+  color: #fff;
+  background: #0c588b;
+  caret-color: rgba(0, 0, 0, 0);
+}
+
+[role='tab'] .icon {
+  margin-right: 0.5em;
+}
+
+[role='tab']:hover::before,
+[role='tab']:focus::before {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  left: 0;
+  border-radius: 0.2em 0.2em 0 0;
+  border-top: 3px solid hsl(20, 96%, 48%);
+  content: '';
+}
+
+[role='separator'] {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #fff;
+}
+
+.expanded-menu {
+  display: none;
+  z-index: 0;
+  position: absolute;
+  top: 55px;
+  left: 12px;
+  flex-direction: column;
+  row-gap: 10px;
+  padding: 10px 0;
+  border: 1px solid #fff;
+  border-radius: 4px;
+}
+
+.expanded-menu a {
+  padding: 0 15px;
+  color: #fff;
+}
+
+#expanded-menu > a:last-of-type {
+  margin-top: 10px;
+}
+
+.expanded-menu a:focus,
+.expanded-menu a:hover {
+  background-color: #e91741;
+}

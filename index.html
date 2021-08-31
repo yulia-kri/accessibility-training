@@ -41,40 +41,52 @@
           </div>
 
           <nav id="navbarMenu" class="navbar-menu">
-            <div class="navbar-end">
-              <span class="navbar-item">
+            <ul class="navbar-end" role="menubar" aria-label="nav menu">
+              <li class="navbar-item" role="none">
                 <a href="#" class="button is-white is-outlined">
                   <span class="icon" aria-hidden="true">
                     <i class="fa fa-home"></i>
                   </span>
                   <span>Home</span>
                 </a>
-              </span>
-              <span class="navbar-item">
-                <a href="#" class="button is-white is-outlined">
+              </li>
+              <li class="navbar-item" role="none">
+                <a class="button is-white is-outlined" id="toggle-expanded-menu" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="expanded-menu" tabindex="0">
                   <span class="icon" aria-hidden="true">
                     <i class="fab fa-superpowers"></i>
                   </span>
                   <span>Examples</span>
+                  <span class="icon" aria-hidden="true">
+                    <i class="fas fa-caret-down"></i>
+                  </span>
                 </a>
-              </span>
-              <span class="navbar-item">
+
+                  <div id="expanded-menu" class="expanded-menu" role="menu" aria-label="Examples" tabindex="-1">
+                    <a href="#" data-index="0" tabindex="-1">Administration</a>
+                    <a href="#" data-index="1" tabindex="-1">Team Settings</a>
+                    <a href="#" data-index="2" tabindex="-1">Manage Your Team</a>
+                    <a href="#" data-index="3" tabindex="-1">Invitations</a>
+                    <span role="separator"></span>
+                    <a href="#" data-index="4" tabindex="-1">Authentication</a>
+                  </div>
+              </li>
+              <li class="navbar-item" role="none">
                 <a href="#" class="button is-white is-outlined">
                   <span class="icon" aria-hidden="true">
                     <i class="fa fa-book"></i>
                   </span>
                   <span>Documentation</span>
                 </a>
-              </span>
-              <span class="navbar-item">
+              </li>
+              <li class="navbar-item" role="none">
                 <a href="#" class="button is-white is-outlined">
                   <span class="icon" aria-hidden="true">
                     <i class="fab fa-github"></i>
                   </span>
                   <span>View Source</span>
                 </a>
-              </span>
-            </div>
+              </li>
+            </ul>
           </nav>
         </div>
       </div>
@@ -272,28 +284,20 @@
         <div class="subtitle">We are always in touch we the outside world</div>
       </div>
     </div>
-    <div class="tabs is-boxed is-centered main-menu" id="nav">
-      <ul role="tablist">
-        <li data-target="pane-1" id="1" class="is-active" role="tab" aria-selected="true" aria-controls="pane-1">
-          <a>
+      <div class="is-boxed is-centered main-menu" role="tablist" aria-label="Topics">
+        <button data-target="pane-1" id="1" role="tab" aria-selected="true" aria-controls="pane-1">
             <span class="icon is-small" aria-hidden="true"><i class="fa fa-image"></i></span>
-            <span>Pictures</span>
-          </a>
-        </li>
-        <li data-target="pane-3" id="3" role="tab" aria-selected="false" aria-controls="pane-3">
-          <a>
+            Pictures
+        </button>
+        <button data-target="pane-3" id="2" role="tab" aria-selected="false" aria-controls="pane-3" tabindex="-1">
             <span class="icon is-small" aria-hidden="true"><i class="fab fa-superpowers"></i></span>
-            <span>Team</span>
-          </a>
-        </li>
-        <li data-target="pane-4" id="4" role="tab" aria-selected="false" aria-controls="pane-4">
-          <a>
+            Team
+        </button>
+        <button data-target="pane-4" id="3" role="tab" aria-selected="false" aria-controls="pane-4" tabindex="-1">
             <span class="icon is-small" aria-hidden="true"><i class="fa fa-film"></i></span>
-            <span>Video</span>
-          </a>
-        </li>
-      </ul>
-    </div>
+            Video
+        </button>
+      </div>
   </section>
 
   <div class="tab-content container">
